@@ -1,6 +1,5 @@
 #!/bin/bash -eu
 
-source $OPENSHIFT_MOCK_PLUGIN_DIR/mock-plugin.conf
 
 function fetchAll {
   echo "do nothing"
@@ -21,8 +20,8 @@ case "$1" in
   post-deploy)   fetchAll ;;
   pre-snapshot)  fetchAll ;;
   post-snapshot) fetchAll ;;
-  pre-restore)   touch $MOCK_STATE/control_pre_restore ;;
-  post-restore)  touch $MOCK_STATE/control_post_restore ;;
+  pre-restore)   fetchAll ;;
+  post-restore)  fetchAll ;;
   *)           exit 0
 esac
 
