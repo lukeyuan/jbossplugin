@@ -1,0 +1,29 @@
+#!/bin/bash -eu
+
+source $OPENSHIFT_MOCK_PLUGIN_DIR/mock-plugin.conf
+
+function fetchAll {
+  echo "do nothing"
+  }
+
+
+
+case "$1" in
+  start)         fetchAll ;;
+  stop)          fetchAll ;;
+  restart)       fetchAll ;;
+  status)        fetchAll ;;
+  reload)        fetchAll ;;
+  tidy)          fetchAll ;;
+  pre-build)     fetchAll ;;
+  build)         fetchAll ;;
+  deploy)        fetchAll ;;
+  post-deploy)   fetchAll ;;
+  pre-snapshot)  fetchAll ;;
+  post-snapshot) fetchAll ;;
+  pre-restore)   touch $MOCK_STATE/control_pre_restore ;;
+  post-restore)  touch $MOCK_STATE/control_post_restore ;;
+  *)           exit 0
+esac
+
+exit 0
